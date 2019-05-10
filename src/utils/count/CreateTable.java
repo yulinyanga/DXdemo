@@ -12,6 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import utils.db.DBConnector;
 import utils.model.SpecialWord;
 
 public class CreateTable {
@@ -47,7 +48,7 @@ public class CreateTable {
         header.setHeightInPoints(30);
         FileOutputStream fos = null;
         try {
-            fos = new FileOutputStream("d:/疑似信息分网站统计.xlsx");
+            fos = new FileOutputStream(DBConnector.countFile);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
