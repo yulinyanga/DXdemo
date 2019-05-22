@@ -96,9 +96,9 @@ public class BeiFen {
 	 * @param tableName
 	 * @param sensitiveWords
 	 * @param isContinue
-	 * @param serverTable 
+	 * @param serverTable
 	 * @return 详细信息
-	 * @throws IOException 
+	 * @throws IOException
 	 *//*
 
 	public List searchMessage(String tableName, String sensitiveWords, boolean isContinue) throws IOException {
@@ -440,14 +440,14 @@ public class BeiFen {
 		String column=ConcatSiteName.getColumnName(serverTable);
 		String column3=ConcatSiteName.getColumnName3(serverTable);
 		//增加数据库的判断
-		if("IR_HKEY".equals(column)) {	
+		if("IR_HKEY".equals(column)) {
 			List<WeiXin> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
 			XSSFSheet sheet = wb.createSheet("疑似信息列表");
 			XSSFRow header=sheet.createRow(0);
-			header.createCell(0).setCellValue("微信名称");  
-			header.createCell(1).setCellValue("检索数量");  
-			header.createCell(2).setCellValue("敏感词数量");  
+			header.createCell(0).setCellValue("微信名称");
+			header.createCell(1).setCellValue("检索数量");
+			header.createCell(2).setCellValue("敏感词数量");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -459,8 +459,8 @@ public class BeiFen {
 						q=q+1;
 						WeiXin weiXin=list.get(0);
 						XSSFRow header2=sheet.createRow(q);
-						header2.createCell(0).setCellValue(weiXin.getIR_WEIXINID()); 
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, weiXin.getIR_WEIXINID()));  
+						header2.createCell(0).setCellValue(weiXin.getIR_WEIXINID());
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, weiXin.getIR_WEIXINID()));
 						header2.createCell(2).setCellValue(list.size());
 						System.out.println("");
 					}else {
@@ -469,12 +469,12 @@ public class BeiFen {
 							q=q+1;
 							WeiXin weiXin=list.get(0);
 							XSSFRow header2=sheet.createRow(q);
-							header2.createCell(0).setCellValue(weiXin.getIR_WEIXINID()); 
-							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, weiXin.getIR_WEIXINID()));  
+							header2.createCell(0).setCellValue(weiXin.getIR_WEIXINID());
+							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, weiXin.getIR_WEIXINID()));
 							header2.createCell(2).setCellValue(0);
 							System.out.println("");
 						}
-					} 
+					}
 
 					bugNum=bugNum+list.size();
 					System.out.println("");
@@ -504,14 +504,14 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("IR_SID".equals(column)) {			//增加微博库的类型
 			List<SpecialWord> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
 			XSSFSheet sheet = wb.createSheet("疑似信息列表");
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("网站名称");
-			header.createCell(1).setCellValue("检索总量");  
+			header.createCell(1).setCellValue("检索总量");
 			header.createCell(2).setCellValue("疑敏感词总量");
 			//定义出异常的数量
 			int bugNum=0;
@@ -521,7 +521,7 @@ public class BeiFen {
 			for(int i=0;i<ConcatSiteName.getAllSiteNAme(serverTable).length;i++) {
 				XSSFRow header2=sheet.createRow(i+1);
 				header2.createCell(0).setCellValue(str[i]);
-				header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, str[i]));  
+				header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, str[i]));
 				header2.createCell(2).setCellValue(0);
 			}*//*
 
@@ -534,7 +534,7 @@ public class BeiFen {
 						SpecialWord specialWord=list.get(0);
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(specialWord.getSiteName());
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, specialWord.getSiteName()));  
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, specialWord.getSiteName()));
 						header2.createCell(2).setCellValue(list.size());
 						System.out.println("");
 					}else {
@@ -544,7 +544,7 @@ public class BeiFen {
 							SpecialWord specialWord=list.get(0);
 							XSSFRow header2=sheet.createRow(q);
 							header2.createCell(0).setCellValue(specialWord.getSiteName());
-							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, specialWord.getSiteName()));  
+							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, specialWord.getSiteName()));
 							header2.createCell(2).setCellValue(0);
 						}else {
 							System.out.println("hahaahahhhhhhhhhhhhhhhhhhh"+where[j]+""+"%)");
@@ -577,7 +577,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("IR_AUTHORS".equals(column)) {			//增加微信库的类型
 			List<SpecialWord> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
@@ -585,9 +585,9 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("IR_ID");
 			header.createCell(1).setCellValue("链接地址");
-			header.createCell(2).setCellValue("链接内容");  
+			header.createCell(2).setCellValue("链接内容");
 			header.createCell(3).setCellValue("网站名称");
-			header.createCell(4).setCellValue("组名");  
+			header.createCell(4).setCellValue("组名");
 			header.createCell(5).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
@@ -601,9 +601,9 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(specialWord.getId());
 						header2.createCell(1).setCellValue(specialWord.getUrl());
-						header2.createCell(2).setCellValue(specialWord.getContent());  
+						header2.createCell(2).setCellValue(specialWord.getContent());
 						header2.createCell(3).setCellValue(specialWord.getSiteName());
-						header2.createCell(4).setCellValue(specialWord.getGroupname());  
+						header2.createCell(4).setCellValue(specialWord.getGroupname());
 						header2.createCell(5).setCellValue(specialWord.getKeyword());
 					}
 					bugNum=bugNum+list.size();
@@ -634,7 +634,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("wangpan".equals(serverTable)) {
 			List<WangPan> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
@@ -642,7 +642,7 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("ip");
 			header.createCell(1).setCellValue("类型");
-			header.createCell(2).setCellValue("文件地址");  
+			header.createCell(2).setCellValue("文件地址");
 			header.createCell(3).setCellValue("检索词");
 			for(int j=0; j<where.length; j++) {
 				for(int i=0; i<filePath.length; i++) {
@@ -655,7 +655,7 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(z+1);
 						header2.createCell(0).setCellValue(wangPan.getIp());
 						header2.createCell(1).setCellValue(wangPan.getType());
-						header2.createCell(2).setCellValue(wangPan.getFilepath());  
+						header2.createCell(2).setCellValue(wangPan.getFilepath());
 						header2.createCell(3).setCellValue(wangPan.getKeyword());
 					}
 
@@ -691,7 +691,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("FileName".equals(column)) {
 			List<FIleModel> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
@@ -699,7 +699,7 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("文件名");
 			header.createCell(1).setCellValue("文件地址");
-			header.createCell(2).setCellValue("ip");  
+			header.createCell(2).setCellValue("ip");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -713,7 +713,7 @@ public class BeiFen {
 						FIleModel fIleModel=list.get(0);
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(fIleModel.getIp());
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, fIleModel.getIp()));  
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, fIleModel.getIp()));
 						header2.createCell(2).setCellValue(list.size());
 						System.out.println("");
 					}else {
@@ -722,7 +722,7 @@ public class BeiFen {
 						FIleModel fIleModel=list.get(0);
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(fIleModel.getIp());
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, fIleModel.getIp()));  
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, fIleModel.getIp()));
 						header2.createCell(2).setCellValue(0);
 					}
 					bugNum=bugNum+list.size();
@@ -752,7 +752,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 
 		}else if("id".equals(column)) {
 			List<AuthorModel> list=new LinkedList<>();
@@ -761,8 +761,8 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("作者id");
 			header.createCell(1).setCellValue("作者名称");
-			header.createCell(2).setCellValue("MID");  
-			header.createCell(2).setCellValue("检索词");	  
+			header.createCell(2).setCellValue("MID");
+			header.createCell(2).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -777,9 +777,9 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(authorModel.getAuthor_id());
 						header2.createCell(1).setCellValue(authorModel.getAuthor_name());
-						header2.createCell(2).setCellValue(authorModel.getMid());  
-						header2.createCell(3).setCellValue(authorModel.getKeyword());  
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, authorModel.getSip()));  
+						header2.createCell(2).setCellValue(authorModel.getMid());
+						header2.createCell(3).setCellValue(authorModel.getKeyword());
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, authorModel.getSip()));
 						header2.createCell(2).setCellValue(list.size());
 						System.out.println("");
 					}else {
@@ -789,9 +789,9 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(authorModel.getAuthor_id());
 						header2.createCell(1).setCellValue(authorModel.getAuthor_name());
-						header2.createCell(2).setCellValue(authorModel.getMid());  
-						header2.createCell(3).setCellValue(authorModel.getKeyword());  
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable,authorModel.getSip()));  
+						header2.createCell(2).setCellValue(authorModel.getMid());
+						header2.createCell(3).setCellValue(authorModel.getKeyword());
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable,authorModel.getSip()));
 						header2.createCell(2).setCellValue(0);
 					}
 					bugNum=bugNum+list.size();
@@ -822,7 +822,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 
 		}else if("Y_ID".equals(column)) {
 			List<JCMS> list=new LinkedList<>();
@@ -831,10 +831,10 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("Y_ID");
 			header.createCell(1).setCellValue("ip");
-			header.createCell(2).setCellValue("SPORT");  
-			header.createCell(3).setCellValue("数据库名称");  
-			header.createCell(4).setCellValue("数据库类型");  
-			header.createCell(5).setCellValue("检索词");  
+			header.createCell(2).setCellValue("SPORT");
+			header.createCell(3).setCellValue("数据库名称");
+			header.createCell(4).setCellValue("数据库类型");
+			header.createCell(5).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -849,11 +849,11 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(jcms.getSID());
 						header2.createCell(1).setCellValue(jcms.getSIP());
-						header2.createCell(2).setCellValue(jcms.getSPORT());  
-						header2.createCell(3).setCellValue(jcms.getTB_NAME());  
+						header2.createCell(2).setCellValue(jcms.getSPORT());
+						header2.createCell(3).setCellValue(jcms.getTB_NAME());
 						header2.createCell(4).setCellValue(jcms.getDB_TYPE());
-						header2.createCell(5).setCellValue(jcms.getKeyword()); 
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));  
+						header2.createCell(5).setCellValue(jcms.getKeyword());
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));
 						header2.createCell(2).setCellValue(list.size());
 						System.out.println("");
 					}else {
@@ -862,7 +862,7 @@ public class BeiFen {
 						JCMS jcms=list.get(0);
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(jcms.getSIP());
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));  
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));
 						header2.createCell(2).setCellValue(0);
 					}
 					for(int z=1;z<list.size()+1;z++) {
@@ -871,10 +871,10 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(jcms.getSID());
 						header2.createCell(1).setCellValue(jcms.getSIP());
-						header2.createCell(2).setCellValue(jcms.getSPORT());  
-						header2.createCell(3).setCellValue(jcms.getTB_NAME());  
+						header2.createCell(2).setCellValue(jcms.getSPORT());
+						header2.createCell(3).setCellValue(jcms.getTB_NAME());
 						header2.createCell(4).setCellValue(jcms.getDB_TYPE());
-						header2.createCell(5).setCellValue(jcms.getKeyword());  
+						header2.createCell(5).setCellValue(jcms.getKeyword());
 					}
 					bugNum=bugNum+list.size();
 					System.out.println("");
@@ -898,23 +898,23 @@ public class BeiFen {
 		String column=ConcatSiteName.getColumnName(serverTable);
 		String column3=ConcatSiteName.getColumnName3(serverTable);
 		//增加数据库的判断
-		if("IR_HKEY".equals(column)) {	
+		if("IR_HKEY".equals(column)) {
 			List<WeiXin> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
 			XSSFSheet sheet = wb.createSheet("疑似信息列表");
 			XSSFRow header=sheet.createRow(0);
-			header.createCell(0).setCellValue("微信名称");  
-			header.createCell(1).setCellValue("检索数量");  
-			header.createCell(2).setCellValue("敏感词数量");  
+			header.createCell(0).setCellValue("微信名称");
+			header.createCell(1).setCellValue("检索数量");
+			header.createCell(2).setCellValue("敏感词数量");
 			//定义出异常的数量
 			HashMap<String,String> hashMapAll=ConcatSiteName.getAllSiteNameData(serverTable);
 			HashMap<String,String> hashMapSpecialAll=ConcatSiteName.getSpecialSiteName(serverTable, getSensitiveWords(filePath[0]));
 			int g=1;
 			for(String sitename:hashMapAll.keySet()) {
 				XSSFRow header2=sheet.createRow(g);
-				header.createCell(0).setCellValue(sitename);  
-				header.createCell(1).setCellValue(hashMapAll.get(sitename));  
-				header.createCell(2).setCellValue(hashMapSpecialAll.get(sitename));  
+				header.createCell(0).setCellValue(sitename);
+				header.createCell(1).setCellValue(hashMapAll.get(sitename));
+				header.createCell(2).setCellValue(hashMapSpecialAll.get(sitename));
 				g++;
 			}
 			//设置列的宽度
@@ -940,14 +940,14 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("IR_SID".equals(column)) {			//增加微博库的类型
 			List<SpecialWord> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
 			XSSFSheet sheet = wb.createSheet("疑似信息列表");
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("网站名称");
-			header.createCell(1).setCellValue("检索总量");  
+			header.createCell(1).setCellValue("检索总量");
 			header.createCell(2).setCellValue("疑敏感词总量");
 
 
@@ -959,12 +959,12 @@ public class BeiFen {
 				System.out.println("---------------------------------------------------"+g);
 				System.out.println(hashMapAll.get(sitename));
 				System.out.println(hashMapSpecialAll.get(sitename));
-				header2.createCell(0).setCellValue(sitename+"");  
-				header2.createCell(1).setCellValue(hashMapAll.get(sitename)+"");  
+				header2.createCell(0).setCellValue(sitename+"");
+				header2.createCell(1).setCellValue(hashMapAll.get(sitename)+"");
 				if(!"null".equals(hashMapSpecialAll.get(sitename)+"")) {
-					header2.createCell(2).setCellValue(hashMapSpecialAll.get(sitename)); 
+					header2.createCell(2).setCellValue(hashMapSpecialAll.get(sitename));
 				}else {
-					header2.createCell(2).setCellValue(0); 
+					header2.createCell(2).setCellValue(0);
 				}
 				g++;
 			}
@@ -991,7 +991,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("IR_AUTHORS".equals(column)) {			//增加微信库的类型
 			List<SpecialWord> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
@@ -999,9 +999,9 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("IR_ID");
 			header.createCell(1).setCellValue("链接地址");
-			header.createCell(2).setCellValue("链接内容");  
+			header.createCell(2).setCellValue("链接内容");
 			header.createCell(3).setCellValue("网站名称");
-			header.createCell(4).setCellValue("组名");  
+			header.createCell(4).setCellValue("组名");
 			header.createCell(5).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
@@ -1015,9 +1015,9 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(specialWord.getId());
 						header2.createCell(1).setCellValue(specialWord.getUrl());
-						header2.createCell(2).setCellValue(specialWord.getContent());  
+						header2.createCell(2).setCellValue(specialWord.getContent());
 						header2.createCell(3).setCellValue(specialWord.getSiteName());
-						header2.createCell(4).setCellValue(specialWord.getGroupname());  
+						header2.createCell(4).setCellValue(specialWord.getGroupname());
 						header2.createCell(5).setCellValue(specialWord.getKeyword());
 					}
 					bugNum=bugNum+list.size();
@@ -1048,7 +1048,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("wangpan".equals(serverTable)) {
 			List<WangPan> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
@@ -1056,7 +1056,7 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("ip");
 			header.createCell(1).setCellValue("类型");
-			header.createCell(2).setCellValue("文件地址");  
+			header.createCell(2).setCellValue("文件地址");
 			header.createCell(3).setCellValue("检索词");
 			for(int j=0; j<where.length; j++) {
 				for(int i=0; i<filePath.length; i++) {
@@ -1069,7 +1069,7 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(z+1);
 						header2.createCell(0).setCellValue(wangPan.getIp());
 						header2.createCell(1).setCellValue(wangPan.getType());
-						header2.createCell(2).setCellValue(wangPan.getFilepath());  
+						header2.createCell(2).setCellValue(wangPan.getFilepath());
 						header2.createCell(3).setCellValue(wangPan.getKeyword());
 					}
 
@@ -1105,7 +1105,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("FileName".equals(column)) {
 			List<FIleModel> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
@@ -1113,7 +1113,7 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("文件名");
 			header.createCell(1).setCellValue("文件地址");
-			header.createCell(2).setCellValue("ip");  
+			header.createCell(2).setCellValue("ip");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -1127,7 +1127,7 @@ public class BeiFen {
 						FIleModel fIleModel=list.get(0);
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(fIleModel.getIp());
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, fIleModel.getIp()));  
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, fIleModel.getIp()));
 						header2.createCell(2).setCellValue(list.size());
 						System.out.println("");
 					}else {
@@ -1136,7 +1136,7 @@ public class BeiFen {
 						FIleModel fIleModel=list.get(0);
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(fIleModel.getIp());
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, fIleModel.getIp()));  
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, fIleModel.getIp()));
 						header2.createCell(2).setCellValue(0);
 					}
 					bugNum=bugNum+list.size();
@@ -1166,7 +1166,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 
 		}else if("id".equals(column)) {
 			List<AuthorModel> list=new LinkedList<>();
@@ -1175,8 +1175,8 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("作者id");
 			header.createCell(1).setCellValue("作者名称");
-			header.createCell(2).setCellValue("MID");  
-			header.createCell(2).setCellValue("检索词");	  
+			header.createCell(2).setCellValue("MID");
+			header.createCell(2).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -1191,9 +1191,9 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(authorModel.getAuthor_id());
 						header2.createCell(1).setCellValue(authorModel.getAuthor_name());
-						header2.createCell(2).setCellValue(authorModel.getMid());  
-						header2.createCell(3).setCellValue(authorModel.getKeyword());  
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, authorModel.getSip()));  
+						header2.createCell(2).setCellValue(authorModel.getMid());
+						header2.createCell(3).setCellValue(authorModel.getKeyword());
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, authorModel.getSip()));
 						header2.createCell(2).setCellValue(list.size());
 						System.out.println("");
 					}else {
@@ -1203,9 +1203,9 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(authorModel.getAuthor_id());
 						header2.createCell(1).setCellValue(authorModel.getAuthor_name());
-						header2.createCell(2).setCellValue(authorModel.getMid());  
-						header2.createCell(3).setCellValue(authorModel.getKeyword());  
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable,authorModel.getSip()));  
+						header2.createCell(2).setCellValue(authorModel.getMid());
+						header2.createCell(3).setCellValue(authorModel.getKeyword());
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable,authorModel.getSip()));
 						header2.createCell(2).setCellValue(0);
 					}
 					bugNum=bugNum+list.size();
@@ -1236,7 +1236,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 
 		}else if("Y_ID".equals(column)) {
 			List<JCMS> list=new LinkedList<>();
@@ -1245,10 +1245,10 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("Y_ID");
 			header.createCell(1).setCellValue("ip");
-			header.createCell(2).setCellValue("SPORT");  
-			header.createCell(3).setCellValue("数据库名称");  
-			header.createCell(4).setCellValue("数据库类型");  
-			header.createCell(5).setCellValue("检索词");  
+			header.createCell(2).setCellValue("SPORT");
+			header.createCell(3).setCellValue("数据库名称");
+			header.createCell(4).setCellValue("数据库类型");
+			header.createCell(5).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -1263,11 +1263,11 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(jcms.getSID());
 						header2.createCell(1).setCellValue(jcms.getSIP());
-						header2.createCell(2).setCellValue(jcms.getSPORT());  
-						header2.createCell(3).setCellValue(jcms.getTB_NAME());  
+						header2.createCell(2).setCellValue(jcms.getSPORT());
+						header2.createCell(3).setCellValue(jcms.getTB_NAME());
 						header2.createCell(4).setCellValue(jcms.getDB_TYPE());
-						header2.createCell(5).setCellValue(jcms.getKeyword()); 
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));  
+						header2.createCell(5).setCellValue(jcms.getKeyword());
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));
 						header2.createCell(2).setCellValue(list.size());
 						System.out.println("");
 					}else {
@@ -1276,7 +1276,7 @@ public class BeiFen {
 						JCMS jcms=list.get(0);
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(jcms.getSIP());
-						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));  
+						header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));
 						header2.createCell(2).setCellValue(0);
 					}
 					for(int z=1;z<list.size()+1;z++) {
@@ -1285,10 +1285,10 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(jcms.getSID());
 						header2.createCell(1).setCellValue(jcms.getSIP());
-						header2.createCell(2).setCellValue(jcms.getSPORT());  
-						header2.createCell(3).setCellValue(jcms.getTB_NAME());  
+						header2.createCell(2).setCellValue(jcms.getSPORT());
+						header2.createCell(3).setCellValue(jcms.getTB_NAME());
 						header2.createCell(4).setCellValue(jcms.getDB_TYPE());
-						header2.createCell(5).setCellValue(jcms.getKeyword());  
+						header2.createCell(5).setCellValue(jcms.getKeyword());
 					}
 					bugNum=bugNum+list.size();
 					System.out.println("");
@@ -1318,16 +1318,16 @@ public class BeiFen {
 		String column=ConcatSiteName.getColumnName(serverTable);
 		String column3=ConcatSiteName.getColumnName3(serverTable);
 		//增加数据库的判断
-		if("IR_HKEY".equals(column)) {	
+		if("IR_HKEY".equals(column)) {
 			List<WeiXin> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
 			XSSFSheet sheet = wb.createSheet("疑似信息列表");
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("作者名");
 			header.createCell(1).setCellValue("链接地址");
-			header.createCell(2).setCellValue("微信id");  
-			header.createCell(3).setCellValue("文本内容");  
-			header.createCell(4).setCellValue("检索词");  
+			header.createCell(2).setCellValue("微信id");
+			header.createCell(3).setCellValue("文本内容");
+			header.createCell(4).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -1340,10 +1340,10 @@ public class BeiFen {
 						WeiXin weiXin=list.get(z-1);
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(weiXin.getFileName());
-						header2.createCell(1).setCellValue(weiXin.getIR_URLNAME()); 
-						header2.createCell(2).setCellValue(weiXin.getIR_WEIXINID()); 
-						header2.createCell(3).setCellValue(weiXin.getIR_CONTENT());  
-						header2.createCell(4).setCellValue(weiXin.getKeyword()); 
+						header2.createCell(1).setCellValue(weiXin.getIR_URLNAME());
+						header2.createCell(2).setCellValue(weiXin.getIR_WEIXINID());
+						header2.createCell(3).setCellValue(weiXin.getIR_CONTENT());
+						header2.createCell(4).setCellValue(weiXin.getKeyword());
 					}
 					bugNum=bugNum+list.size();
 					System.out.println("");
@@ -1373,7 +1373,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("IR_SID".equals(column)) {			//增加微博库的类型
 			List<SpecialWord> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
@@ -1381,10 +1381,10 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("IR_ID");
 			header.createCell(1).setCellValue("链接地址");
-			header.createCell(2).setCellValue("链接内容");  
+			header.createCell(2).setCellValue("链接内容");
 			header.createCell(3).setCellValue("网站名称");
 			header.createCell(4).setCellValue("频道名称");
-			header.createCell(5).setCellValue("组名");  
+			header.createCell(5).setCellValue("组名");
 			header.createCell(6).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
@@ -1398,10 +1398,10 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(specialWord.getId());
 						header2.createCell(1).setCellValue(specialWord.getUrl());
-						header2.createCell(2).setCellValue(specialWord.getContent());  
+						header2.createCell(2).setCellValue(specialWord.getContent());
 						header2.createCell(3).setCellValue(specialWord.getSiteName());
 						header2.createCell(4).setCellValue(specialWord.getChannel());
-						header2.createCell(5).setCellValue(specialWord.getGroupname());  
+						header2.createCell(5).setCellValue(specialWord.getGroupname());
 						header2.createCell(6).setCellValue(specialWord.getKeyword());
 					}
 					bugNum=bugNum+list.size();
@@ -1432,7 +1432,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("IR_AUTHORS".equals(column)) {			//增加微信库的类型
 			List<SpecialWord> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
@@ -1440,9 +1440,9 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("IR_ID");
 			header.createCell(1).setCellValue("链接地址");
-			header.createCell(2).setCellValue("链接内容");  
+			header.createCell(2).setCellValue("链接内容");
 			header.createCell(3).setCellValue("网站名称");
-			header.createCell(4).setCellValue("组名");  
+			header.createCell(4).setCellValue("组名");
 			header.createCell(5).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
@@ -1456,9 +1456,9 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(specialWord.getId());
 						header2.createCell(1).setCellValue(specialWord.getUrl());
-						header2.createCell(2).setCellValue(specialWord.getContent());  
+						header2.createCell(2).setCellValue(specialWord.getContent());
 						header2.createCell(3).setCellValue(specialWord.getSiteName());
-						header2.createCell(4).setCellValue(specialWord.getGroupname());  
+						header2.createCell(4).setCellValue(specialWord.getGroupname());
 						header2.createCell(5).setCellValue(specialWord.getKeyword());
 					}
 					bugNum=bugNum+list.size();
@@ -1489,7 +1489,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("wangpan".equals(serverTable)) {
 			List<WangPan> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
@@ -1497,7 +1497,7 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("ip");
 			header.createCell(1).setCellValue("类型");
-			header.createCell(2).setCellValue("文件地址");  
+			header.createCell(2).setCellValue("文件地址");
 			header.createCell(3).setCellValue("检索词");
 			for(int j=0; j<where.length; j++) {
 				for(int i=0; i<filePath.length; i++) {
@@ -1510,7 +1510,7 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(z+1);
 						header2.createCell(0).setCellValue(wangPan.getIp());
 						header2.createCell(1).setCellValue(wangPan.getType());
-						header2.createCell(2).setCellValue(wangPan.getFilepath());  
+						header2.createCell(2).setCellValue(wangPan.getFilepath());
 						header2.createCell(3).setCellValue(wangPan.getKeyword());
 					}
 
@@ -1546,7 +1546,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 		}else if("FileName".equals(column)) {
 			List<FIleModel> list=new LinkedList<>();
 			XSSFWorkbook wb = new XSSFWorkbook();
@@ -1554,8 +1554,8 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("文件名");
 			header.createCell(1).setCellValue("文件地址");
-			header.createCell(2).setCellValue("ip");  
-			header.createCell(2).setCellValue("检索词");  
+			header.createCell(2).setCellValue("ip");
+			header.createCell(2).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -1571,8 +1571,8 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(fIleModel.getFilename());
 						header2.createCell(1).setCellValue(fIleModel.getFilepath());
-						header2.createCell(2).setCellValue(fIleModel.getIp());  
-						header2.createCell(3).setCellValue(fIleModel.getKey());  
+						header2.createCell(2).setCellValue(fIleModel.getIp());
+						header2.createCell(3).setCellValue(fIleModel.getKey());
 					}
 					bugNum=bugNum+list.size();
 					System.out.println("");
@@ -1602,7 +1602,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 
 		}else if("id".equals(column)) {
 			List<AuthorModel> list=new LinkedList<>();
@@ -1611,8 +1611,8 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("作者id");
 			header.createCell(1).setCellValue("作者名称");
-			header.createCell(2).setCellValue("MID");  
-			header.createCell(2).setCellValue("检索词");	  
+			header.createCell(2).setCellValue("MID");
+			header.createCell(2).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -1626,8 +1626,8 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(authorModel.getAuthor_id());
 						header2.createCell(1).setCellValue(authorModel.getAuthor_name());
-						header2.createCell(2).setCellValue(authorModel.getMid());  
-						header2.createCell(3).setCellValue(authorModel.getKeyword());  
+						header2.createCell(2).setCellValue(authorModel.getMid());
+						header2.createCell(3).setCellValue(authorModel.getKeyword());
 					}
 					bugNum=bugNum+list.size();
 					System.out.println("");
@@ -1657,7 +1657,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 
 		}else if("Y_ID".equals(column)) {
 			List<JCMS> list=new LinkedList<>();
@@ -1666,10 +1666,10 @@ public class BeiFen {
 			XSSFRow header=sheet.createRow(0);
 			header.createCell(0).setCellValue("w_ID");
 			header.createCell(1).setCellValue("ip");
-			header.createCell(2).setCellValue("数据库名称");  
-			header.createCell(3).setCellValue("表名称");  
-			header.createCell(4).setCellValue("文本");  
-			header.createCell(5).setCellValue("检索词");  
+			header.createCell(2).setCellValue("数据库名称");
+			header.createCell(3).setCellValue("表名称");
+			header.createCell(4).setCellValue("文本");
+			header.createCell(5).setCellValue("检索词");
 			//定义出异常的数量
 			int bugNum=0;
 			int q=0;
@@ -1683,10 +1683,10 @@ public class BeiFen {
 						XSSFRow header2=sheet.createRow(q);
 						header2.createCell(0).setCellValue(jcms.getSID());
 						header2.createCell(1).setCellValue(jcms.getSIP());
-						header2.createCell(2).setCellValue(jcms.getDb_name());  
-						header2.createCell(3).setCellValue(jcms.getTB_NAME());  
+						header2.createCell(2).setCellValue(jcms.getDb_name());
+						header2.createCell(3).setCellValue(jcms.getTB_NAME());
 						header2.createCell(4).setCellValue(jcms.getTrscontent());
-						header2.createCell(5).setCellValue(jcms.getKeyword());  
+						header2.createCell(5).setCellValue(jcms.getKeyword());
 					}
 					bugNum=bugNum+list.size();
 					System.out.println("");
@@ -1716,7 +1716,7 @@ public class BeiFen {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}  
+			}
 
 		}
 	}
@@ -1743,7 +1743,7 @@ public class BeiFen {
 			String column=ConcatSiteName.getColumnName(serverTable);
 			String column3=ConcatSiteName.getColumnName3(serverTable);
 			//增加数据库的判断
-			if("IR_HKEY".equals(column)) {	
+			if("IR_HKEY".equals(column)) {
 				//增加敏感词的map集合
 				HashMap<String,Integer> hashMapSpecialAll=ConcatSiteName.getSpecialSiteName(serverTable, getSensitiveWords(filePath[0]));
 				String columnname="微信名称";
@@ -1766,9 +1766,9 @@ public class BeiFen {
 				XSSFRow header=sheet.createRow(0);
 				header.createCell(0).setCellValue("IR_ID");
 				header.createCell(1).setCellValue("链接地址");
-				header.createCell(2).setCellValue("链接内容");  
+				header.createCell(2).setCellValue("链接内容");
 				header.createCell(3).setCellValue("网站名称");
-				header.createCell(4).setCellValue("组名");  
+				header.createCell(4).setCellValue("组名");
 				header.createCell(5).setCellValue("检索词");
 				//定义出异常的数量
 				int bugNum=0;
@@ -1782,9 +1782,9 @@ public class BeiFen {
 							XSSFRow header2=sheet.createRow(q);
 							header2.createCell(0).setCellValue(specialWord.getId());
 							header2.createCell(1).setCellValue(specialWord.getUrl());
-							header2.createCell(2).setCellValue(specialWord.getContent());  
+							header2.createCell(2).setCellValue(specialWord.getContent());
 							header2.createCell(3).setCellValue(specialWord.getSiteName());
-							header2.createCell(4).setCellValue(specialWord.getGroupname());  
+							header2.createCell(4).setCellValue(specialWord.getGroupname());
 							header2.createCell(5).setCellValue(specialWord.getKeyword());
 						}
 						bugNum=bugNum+list.size();
@@ -1815,7 +1815,7 @@ public class BeiFen {
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}  
+				}
 			}else if("wangpan".equals(serverTable)) {
 				List<WangPan> list=new LinkedList<>();
 				XSSFWorkbook wb = new XSSFWorkbook();
@@ -1823,7 +1823,7 @@ public class BeiFen {
 				XSSFRow header=sheet.createRow(0);
 				header.createCell(0).setCellValue("ip");
 				header.createCell(1).setCellValue("类型");
-				header.createCell(2).setCellValue("文件地址");  
+				header.createCell(2).setCellValue("文件地址");
 				header.createCell(3).setCellValue("检索词");
 				for(int j=0; j<where.length; j++) {
 					for(int i=0; i<filePath.length; i++) {
@@ -1836,7 +1836,7 @@ public class BeiFen {
 							XSSFRow header2=sheet.createRow(z+1);
 							header2.createCell(0).setCellValue(wangPan.getIp());
 							header2.createCell(1).setCellValue(wangPan.getType());
-							header2.createCell(2).setCellValue(wangPan.getFilepath());  
+							header2.createCell(2).setCellValue(wangPan.getFilepath());
 							header2.createCell(3).setCellValue(wangPan.getKeyword());
 						}
 
@@ -1872,7 +1872,7 @@ public class BeiFen {
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}  
+				}
 			}else if("id".equals(column)) {
 				List<AuthorModel> list=new LinkedList<>();
 				XSSFWorkbook wb = new XSSFWorkbook();
@@ -1880,8 +1880,8 @@ public class BeiFen {
 				XSSFRow header=sheet.createRow(0);
 				header.createCell(0).setCellValue("作者id");
 				header.createCell(1).setCellValue("作者名称");
-				header.createCell(2).setCellValue("MID");  
-				header.createCell(2).setCellValue("检索词");	  
+				header.createCell(2).setCellValue("MID");
+				header.createCell(2).setCellValue("检索词");
 				//定义出异常的数量
 				int bugNum=0;
 				int q=0;
@@ -1896,9 +1896,9 @@ public class BeiFen {
 							XSSFRow header2=sheet.createRow(q);
 							header2.createCell(0).setCellValue(authorModel.getAuthor_id());
 							header2.createCell(1).setCellValue(authorModel.getAuthor_name());
-							header2.createCell(2).setCellValue(authorModel.getMid());  
-							header2.createCell(3).setCellValue(authorModel.getKeyword());  
-							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, authorModel.getSip()));  
+							header2.createCell(2).setCellValue(authorModel.getMid());
+							header2.createCell(3).setCellValue(authorModel.getKeyword());
+							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, authorModel.getSip()));
 							header2.createCell(2).setCellValue(list.size());
 							System.out.println("");
 						}else {
@@ -1908,9 +1908,9 @@ public class BeiFen {
 							XSSFRow header2=sheet.createRow(q);
 							header2.createCell(0).setCellValue(authorModel.getAuthor_id());
 							header2.createCell(1).setCellValue(authorModel.getAuthor_name());
-							header2.createCell(2).setCellValue(authorModel.getMid());  
-							header2.createCell(3).setCellValue(authorModel.getKeyword());  
-							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable,authorModel.getSip()));  
+							header2.createCell(2).setCellValue(authorModel.getMid());
+							header2.createCell(3).setCellValue(authorModel.getKeyword());
+							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable,authorModel.getSip()));
 							header2.createCell(2).setCellValue(0);
 						}
 						bugNum=bugNum+list.size();
@@ -1941,7 +1941,7 @@ public class BeiFen {
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}  
+				}
 
 			}else if("Y_ID".equals(column)) {
 				List<JCMS> list=new LinkedList<>();
@@ -1950,10 +1950,10 @@ public class BeiFen {
 				XSSFRow header=sheet.createRow(0);
 				header.createCell(0).setCellValue("Y_ID");
 				header.createCell(1).setCellValue("ip");
-				header.createCell(2).setCellValue("SPORT");  
-				header.createCell(3).setCellValue("数据库名称");  
-				header.createCell(4).setCellValue("数据库类型");  
-				header.createCell(5).setCellValue("检索词");  
+				header.createCell(2).setCellValue("SPORT");
+				header.createCell(3).setCellValue("数据库名称");
+				header.createCell(4).setCellValue("数据库类型");
+				header.createCell(5).setCellValue("检索词");
 				//定义出异常的数量
 				int bugNum=0;
 				int q=0;
@@ -1968,11 +1968,11 @@ public class BeiFen {
 							XSSFRow header2=sheet.createRow(q);
 							header2.createCell(0).setCellValue(jcms.getSID());
 							header2.createCell(1).setCellValue(jcms.getSIP());
-							header2.createCell(2).setCellValue(jcms.getSPORT());  
-							header2.createCell(3).setCellValue(jcms.getTB_NAME());  
+							header2.createCell(2).setCellValue(jcms.getSPORT());
+							header2.createCell(3).setCellValue(jcms.getTB_NAME());
 							header2.createCell(4).setCellValue(jcms.getDB_TYPE());
-							header2.createCell(5).setCellValue(jcms.getKeyword()); 
-							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));  
+							header2.createCell(5).setCellValue(jcms.getKeyword());
+							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));
 							header2.createCell(2).setCellValue(list.size());
 							System.out.println("");
 						}else {
@@ -1981,7 +1981,7 @@ public class BeiFen {
 							JCMS jcms=list.get(0);
 							XSSFRow header2=sheet.createRow(q);
 							header2.createCell(0).setCellValue(jcms.getSIP());
-							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));  
+							header2.createCell(1).setCellValue(CountTotalRecordNum.getColumnNum(serverTable, jcms.getSIP()));
 							header2.createCell(2).setCellValue(0);
 						}
 						for(int z=1;z<list.size()+1;z++) {
@@ -1990,10 +1990,10 @@ public class BeiFen {
 							XSSFRow header2=sheet.createRow(q);
 							header2.createCell(0).setCellValue(jcms.getSID());
 							header2.createCell(1).setCellValue(jcms.getSIP());
-							header2.createCell(2).setCellValue(jcms.getSPORT());  
-							header2.createCell(3).setCellValue(jcms.getTB_NAME());  
+							header2.createCell(2).setCellValue(jcms.getSPORT());
+							header2.createCell(3).setCellValue(jcms.getTB_NAME());
 							header2.createCell(4).setCellValue(jcms.getDB_TYPE());
-							header2.createCell(5).setCellValue(jcms.getKeyword());  
+							header2.createCell(5).setCellValue(jcms.getKeyword());
 						}
 						bugNum=bugNum+list.size();
 						System.out.println("");
